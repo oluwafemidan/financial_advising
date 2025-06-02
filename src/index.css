@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@theme {
+  --font-madimi: "Madimi", sans-serif;
+  --color-bg: 35 172 196;
+  --color-box: 17 24 39;
+  --box-border: 243 244 246 / 0.1;
+  --box-sd: transparent;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+@layer utilities {
+  .nav-hover-btn {
+    @apply relative ms-4 text-lg font-medium after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
+  }
+
+  .bg-body {
+    background-color: rgb(var(--color-bg));
+  }
+  .bg-box-bg {
+    background-color: rgb(var(--color-box));
+  }
+}
+
+.testimony-card-bg {
+  background-image: url("/EFA_logo.svg");
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.testimony-card-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(211, 211, 241);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.testimony-card-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.testimony-swiper-container {
+  padding: 20px;
+  --swiper-navigation-size: 24px;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* koko */
+
+.swiper {
+  position: relative;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev {
+  left: 10px !important;
+}
+
+.swiper-button-next {
+  right: 10px !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-top: 3px solid #3b82f6;
+  border-left: 3px solid #3b82f6;
+}
+
+.swiper-button-prev:after {
+  transform: rotate(-45deg);
+  margin-right: -3px;
+}
+
+.swiper-button-next:after {
+  transform: rotate(135deg);
+  margin-left: -3px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.footer-bg {
+  background-image: url("/wavey-fingerprint.svg");
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+  overflow: hidden;
+  min-height: 10rem;
+}
