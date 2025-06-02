@@ -22,12 +22,17 @@ const NavBar = () => {
         </div>
         <ul
           className={`lg:flex lg:items-center md:pb-0 pb-12 absolute lg:static bg-white/30 backdrop-blur-md md:z-auto z-[-1] left-0 right-0 lg:w-auto w-full rounded-md shadow-lg transition-all duration-500 ease-in ${
-            open ? "top-12 mt-24" : "top-[-490px]"
+            open
+              ? "top-12 mt-24 !nav-hover-btn hover:underline"
+              : "top-[-490px]"
           }`}
         >
           {navItems.map((nav) => (
             <li className="md:ml-8 md:my-0 my-7 font-semibold" key={nav.name}>
-              <a href={nav.link} className="text-gray-800 nav-hover-btn">
+              <a
+                href={nav.link}
+                className="text-gray-800 !nav-hover-btn hover:underline"
+              >
                 {nav.name}
               </a>
             </li>
